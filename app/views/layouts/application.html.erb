@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BcryptAuthSessions</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container-fluid">
+<% if logged_in? %>
+  <%= "Hello #{current_user.name}  " %><%= link_to 'Log Out', logout_path %>
+  <% else %>
+  <%= link_to 'Log In', new_session_path %>
+<% end %>
+</div>
+<hr />
+<div class="container">
+<%= yield %>
+</div>
+
+
+</body>
+</html>
