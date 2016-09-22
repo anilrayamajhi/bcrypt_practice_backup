@@ -2,8 +2,16 @@
 <p>Find me in app/views/users/index.html.erb</p>
 
 
-<% @users.each do |u| %>
-<hr />
-<%= u.name %>
-<%= link_to 'Delete', user_path(u), method: :delete %>
+<!--3 row; 3*4=12-->
+
+<% @users.each_slice(3).each do |group| %>
+<div class="row">
+  <% group.each do |u| %>
+  <div
+  <div class="col-md-4">
+    <%= u.name %><br />
+    <%= link_to 'Delete', user_path(u), method: :delete %>
+  </div>
+  <% end %>
+</div>
 <% end %>
