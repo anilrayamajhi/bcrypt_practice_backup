@@ -3,7 +3,7 @@
 
 
 <%= form_tag sessions_path do %>
-Email: <%= text_field_tag :email, params[:email] %><br />
-Password: <%= password_field_tag :password, nil %><br />
+Email: <%= text_field_tag :email, params[:email], class:"form-control" %><br />
+Password: <%= password_field_tag :password, nil, class:"form-control"  %><br />
 <%= submit_tag 'Log In' %>
 <% end %>

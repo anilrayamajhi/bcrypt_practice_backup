@@ -8,13 +8,6 @@
 </head>
 <body>
   <%= render 'layouts/nav' %>
-<div class="container-fluid">
-<% if logged_in? %>
-  <%= "Hello #{current_user.name}  " %><%= link_to 'Log Out', logout_path %>
-  <% else %>
-  <%= link_to 'Log In', new_session_path %>
-<% end %>
-</div>
 <hr />
 <div class="container">
 <%= yield %>
